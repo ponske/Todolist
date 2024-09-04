@@ -18,7 +18,7 @@ class App(tk.Tk):
             self.frames[F]=frame
             frame.grid(row=0, column=0, sticky="nsew")
             
-        self.geometry("400x500")
+        self.geometry("800x600")
 
         #メニューバーの作成
         self.menubar=tk.Menu(self)
@@ -176,7 +176,7 @@ class StartPage(tk.Frame):
 
     def button_ins_pushed(self):
         index = len(self.text_boxes)
-        text = tk.Text(self.add_buttons_frame, height=1, width=30)
+        text = tk.Text(self.add_buttons_frame, height=1, width=100)
         text.grid(row=index, column=0, padx=5, pady=5)
         self.text_boxes.append(text)
         app.menu1.entryconfig("保存",state="normal")
@@ -197,7 +197,7 @@ class SearchPage(tk.Frame):
 
         tk.Label(self,text="編集するデータを選択してください").grid(padx=10, pady=10,sticky="w")
         
-        self.listbox = tk.Listbox(self,width=50,height=20)
+        self.listbox = tk.Listbox(self,width=80,height=30)
         self.listbox.grid(padx=10, pady=10)
 
         button1 = tk.Button(self, text="選択を確定し、Edit Pageへ進む",
@@ -276,7 +276,7 @@ class EditPage(tk.Frame):
 
     def button_ins_pushed(self):
         index = len(self.text_boxes)
-        text = tk.Text(self.add_buttons_frame, height=1, width=30)
+        text = tk.Text(self.add_buttons_frame, height=1, width=100)
         text.grid(row=index, column=0, padx=5, pady=5)
         self.text_boxes.append(text)
 
@@ -321,7 +321,7 @@ class EditPage(tk.Frame):
             conn.close()
 
             for i in range(num_txt):
-                text = tk.Text(self.add_buttons_frame, height=1, width=30)
+                text = tk.Text(self.add_buttons_frame, height=1, width=100)
                 text.grid(row=i, column=0, padx=5, pady=5)
                 initial_text = data[i]
                 text.insert("1.0", initial_text)
